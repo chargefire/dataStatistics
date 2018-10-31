@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            font-family: cursive;
+            user-select:none;
+        }
+        body{
+            padding:20px;
+        }
+        .title{
+            display: inline-block;
+            height: 48px;
+            line-height: 48px;
+            padding:0 20px;
+            border-radius: 5px;
+            font-size: 22px;
+            color: #fff;
+            font-weight: bolder;
+            background: #8c32ef;
+            text-align: center;
+            margin-right: 5px;
+            vertical-align: top;
+            font-style: normal;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        .container{
+            width: 3000px;
+        }
+        ul{
+            margin-right: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        li{
+            margin-bottom: 5px;
+        }
+        em{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 5px;
+            font-size: 22px;
+            color: #fff;
+            font-weight: bolder;
+            background: #ef3232;
+            text-align: center;
+            margin-right: 5px;
+            vertical-align: top;
+            font-style: normal;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        }
+        img{
+            width:400px;
+            height:auto;
+            display: inline-block;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body ondragstart="return false">
+    <div class="title"></div>
+    <br>
+    <div class="container"></div>
+    <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var title="20181028刷龙记录（暗龙）";
+            var data=
+                [
+                    "75555a20f3a6a2a86bac6f7a9b42981",
+                    "dfd9a6db91f1bf9ef59578300621667",
+                    "4dbc372687186016f8b8af9cb0db170",
+                    "b787b9876a85597530bc1a613555581",
+                    "70b0d12f36fd3744e703b1c4d4795ec",
+                    "17736963d28fc690fcc31bb25906a26",
+                    "285aab4568f6323d6bda5a8313ac11f",
+                    "447c92caface9a1539c6dfed2fbfa30",
+                    "0e700a23c6e6b635917666dd8327bcd",
+                    "519cc7561266d29005b1ffe1e5f9b6e",
+                    "73271d72b670007c21a82cc2e73dc74",
+                    "c58d5f772917abe2046919bce44547c",
+                    "462389a352e9cd90e3c00146335aef4",
+                    "703ab63b32c08952038f46242d3a039",
+                    "2bb1e7c08dbd3ac05c5bd39ecb520e0",
+                    "12fb6df9cfebb60d18f125caf5fa3c2",
+                    "ea790df630830d23e88c4368751215b",
+                    "b13b08ca1598ca2929ad82d0afa546c",
+                    "8d3eb7bc32dd30668d19e9fea7aa70b"
+                ];
+            var imgurl="images20181028/";
+            var filename=".png";
+            var str="<ul>";
+            var target=$(".container");
+
+            $.each(data,function(i,j){
+                str+='<li><em>'+(i+1)+'</em><img src="'+imgurl+j+filename+'"></li>';
+                if((i+1)%10==0){
+                    str+='</ul><ul>';
+                }
+            });
+            str+='</ul>';
+            target.html(str);
+            $(".title").html(title);
+        });
+        
+    </script>
+</body>
+</html>
